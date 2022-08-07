@@ -1,8 +1,7 @@
 # MinTic-UTP-Reto5
 Reto 5 de Daniel Yesid Murillo Morales
 
-Version de Java : 11 
-***
+Version de Java : 11  
 Ultima actualizacion: 07/08/2022
 Propietario: Daniel Yesid Murillo Morales
 Contacto: danielmurillomorales01@gmail.com
