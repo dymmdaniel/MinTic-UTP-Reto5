@@ -1,4 +1,4 @@
-# MinTic-UTP-Reto5
+# Mision TIC Reto 5
 Reto 5 de Daniel Yesid Murillo Morales
 
 Version de Java : 11  
