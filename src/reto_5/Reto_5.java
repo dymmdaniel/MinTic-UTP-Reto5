@@ -4,6 +4,13 @@
  */
 package reto_5;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import reto_5.consult.Consulta;
+import reto_5.controller.ReportController;
+import reto_5.view.ReportView;
+
 /**
  * Construccion de una aplicacion de escritorio
  * Daniel Yesid Murillo Morales
@@ -17,7 +24,15 @@ public class Reto_5 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Hola");
+        //ReportView view=new ReportView();
+        //view.setVisible(true);
+        ReportController controller=new ReportController();
+        Consulta consulta=new Consulta();
+        consulta.query1(consulta.getConsulta1());
+        System.out.println();
+        consulta.query2(consulta.getConsulta2());
+        System.out.println();
+        consulta.query3(consulta.getConsulta3());
     }
     
 }
