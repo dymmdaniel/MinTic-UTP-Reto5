@@ -4,11 +4,16 @@
  */
 package reto_5.view;
 
+import java.util.ArrayList;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author danie
  */
 public class Informe extends javax.swing.JPanel {
+    
 
     private int informe = 0;
 
@@ -21,13 +26,47 @@ public class Informe extends javax.swing.JPanel {
 
     public void inicializar(int x) {
         if (x == 1) {
+            //Asignamos el nombre
             jLabel1.setText("1. Informe Lider");
+            DefaultTableModel modelTable=new DefaultTableModel();
+            ArrayList<Object> cabecera=new ArrayList<>();
+            cabecera.add("ID lider");
+            cabecera.add("Nombre");
+            cabecera.add("Primer Apellido");
+            cabecera.add("Ciudad");
+            for(Object nombre:cabecera){
+                modelTable.addColumn(nombre);
+            }
+            this.jTable1.setModel(modelTable);
         } else if (x == 2) {
-            jLabel1.setText("2. Informe Casa Campestre");
+            //Asignamos el nombre
+            jLabel1.setText("2. Informe Campestre");
+            DefaultTableModel modelTable=new DefaultTableModel();
+            ArrayList<Object> cabecera=new ArrayList<>();
+            cabecera.add("ID Proyecto");
+            cabecera.add("Constructora");
+            cabecera.add("Numero Habitaciones");
+            cabecera.add("Ciudad");
+            for(Object nombre:cabecera){
+                modelTable.addColumn(nombre);
+            }
+            this.jTable1.setModel(modelTable);
         } else if (x == 3) {
-            jLabel1.setText("3. Informe Homecente");
+            //Asignamos el nombre
+            jLabel1.setText("3. Informe Homecenter");
+            DefaultTableModel modelTable=new DefaultTableModel();
+            ArrayList<Object> cabecera=new ArrayList<>();
+            cabecera.add("ID COMPRA");
+            cabecera.add("Constructora");
+            cabecera.add("Banco Vinculado");
+            for(Object nombre:cabecera){
+                modelTable.addColumn(nombre);
+            }
+            this.jTable1.setModel(modelTable);
         } else {
             jLabel1.setText("Escriba el comando SQL para realizar la consulta");
+            DefaultTableModel modelTable=new DefaultTableModel();
+            jTable1.setModel(modelTable);
         }
 
     }
@@ -53,9 +92,13 @@ public class Informe extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 18)); // NOI18N
-        jLabel1.setText("Label1");
+        setBackground(new java.awt.Color(0, 149, 126));
 
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        jTable1.setBackground(new java.awt.Color(0, 207, 201));
+        jTable1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -87,9 +130,9 @@ public class Informe extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(109, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import reto_5.consult.Consulta;
 import reto_5.view.MainPanel;
 
 /**
@@ -21,6 +22,7 @@ import reto_5.view.MainPanel;
 public class ReportView extends javax.swing.JFrame implements ActionListener {
     Informe informe = new Informe();
     MainPanel mainPanel = new MainPanel();
+    Consulta consulta=new Consulta();
 
     /**
      * Creates new form ReportView
@@ -207,6 +209,7 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
 
     private void btnInforme3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInforme3ActionPerformed
         // TODO add your handling code here:
+        
         btnInicio.setEnabled(true);
         btnInforme1.setEnabled(true);
         btnInforme2.setEnabled(true);
