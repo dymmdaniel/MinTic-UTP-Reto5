@@ -3,3 +3,7 @@ build/
 nbproject/
 /build.xml
 /manifest.mf
+nbproject/build-impl.xml
+nbproject/genfiles.properties
+nbproject/private/private.properties
+nbproject/project.properties
