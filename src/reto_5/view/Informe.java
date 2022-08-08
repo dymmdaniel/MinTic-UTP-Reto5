@@ -7,65 +7,84 @@ package reto_5.view;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
+import reto_5.consult.Consulta;
 
 /**
  *
  * @author danie
  */
 public class Informe extends javax.swing.JPanel {
-    
 
     private int informe = 0;
+    Consulta consulta = new Consulta();
 
     /**
      * Creates new form informe
      */
     public Informe() {
         initComponents();
+        jTable1.enable(false);
     }
 
     public void inicializar(int x) {
         if (x == 1) {
             //Asignamos el nombre
             jLabel1.setText("1. Informe Lider");
-            DefaultTableModel modelTable=new DefaultTableModel();
-            ArrayList<Object> cabecera=new ArrayList<>();
+            DefaultTableModel modelTable = new DefaultTableModel();
+            ArrayList<String> cabecera = new ArrayList<>();
+            ArrayList<Object[]> rows = new ArrayList<>();    
             cabecera.add("ID lider");
             cabecera.add("Nombre");
             cabecera.add("Primer Apellido");
             cabecera.add("Ciudad");
-            for(Object nombre:cabecera){
+            for (Object nombre : cabecera) {
                 modelTable.addColumn(nombre);
             }
             this.jTable1.setModel(modelTable);
+            rows = consulta.query1(consulta.getConsulta1());
+            for (Object[] data:rows) {
+                modelTable.addRow(data);
+            }
+            this.jTable1.setModel(modelTable);
+
         } else if (x == 2) {
             //Asignamos el nombre
             jLabel1.setText("2. Informe Campestre");
-            DefaultTableModel modelTable=new DefaultTableModel();
-            ArrayList<Object> cabecera=new ArrayList<>();
+            DefaultTableModel modelTable = new DefaultTableModel();
+            ArrayList<Object> cabecera = new ArrayList<>();
+            ArrayList<Object[]> rows = new ArrayList<>();
             cabecera.add("ID Proyecto");
             cabecera.add("Constructora");
             cabecera.add("Numero Habitaciones");
             cabecera.add("Ciudad");
-            for(Object nombre:cabecera){
+            for (Object nombre : cabecera) {
                 modelTable.addColumn(nombre);
+            }
+            rows = consulta.query2(consulta.getConsulta2());
+            for (Object[] data:rows) {
+                modelTable.addRow(data);
             }
             this.jTable1.setModel(modelTable);
         } else if (x == 3) {
             //Asignamos el nombre
             jLabel1.setText("3. Informe Homecenter");
-            DefaultTableModel modelTable=new DefaultTableModel();
-            ArrayList<Object> cabecera=new ArrayList<>();
+            DefaultTableModel modelTable = new DefaultTableModel();
+            ArrayList<Object> cabecera = new ArrayList<>();
+            ArrayList<Object[]> rows = new ArrayList<>();
             cabecera.add("ID COMPRA");
             cabecera.add("Constructora");
             cabecera.add("Banco Vinculado");
-            for(Object nombre:cabecera){
+            for (Object nombre : cabecera) {
                 modelTable.addColumn(nombre);
+            }
+            rows = consulta.query3(consulta.getConsulta3());
+            for (Object[] data:rows) {
+                modelTable.addRow(data);
             }
             this.jTable1.setModel(modelTable);
         } else {
             jLabel1.setText("Escriba el comando SQL para realizar la consulta");
-            DefaultTableModel modelTable=new DefaultTableModel();
+            DefaultTableModel modelTable = new DefaultTableModel();
             jTable1.setModel(modelTable);
         }
 
@@ -97,7 +116,6 @@ public class Informe extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setBackground(new java.awt.Color(0, 207, 201));
         jTable1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

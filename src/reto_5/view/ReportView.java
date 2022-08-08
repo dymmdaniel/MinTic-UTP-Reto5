@@ -21,6 +21,7 @@ import reto_5.view.MainPanel;
  */
 public class ReportView extends javax.swing.JFrame implements ActionListener {
     Informe informe = new Informe();
+    InformeSQL informeSql=new InformeSQL();
     MainPanel mainPanel = new MainPanel();
     Consulta consulta=new Consulta();
 
@@ -218,6 +219,7 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         mainPanel.setVisible(false);
         informe.inicializar(3);
         informe.setVisible(true);
+        informeSql.setVisible(false);
         informe.setInforme(3);
         JContenedor.add(informe);
     }//GEN-LAST:event_btnInforme3ActionPerformed
@@ -231,6 +233,7 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         btnInforme4.setEnabled(true);
         mainPanel.setVisible(false);
         informe.inicializar(2);
+        informeSql.setVisible(false);
         informe.setVisible(true);
         JContenedor.add(informe);
     }//GEN-LAST:event_btnInforme2ActionPerformed
@@ -244,8 +247,8 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         btnInforme4.setEnabled(true);
         mainPanel.setVisible(true);
         informe.setVisible(false);
-        JContenedor.add(mainPanel);
-        
+        informeSql.setVisible(false);
+        JContenedor.add(mainPanel);   
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnInforme1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInforme1ActionPerformed
@@ -258,6 +261,7 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         mainPanel.setVisible(false);
         informe.inicializar(1);
         informe.setVisible(true);
+        informeSql.setVisible(false);
         JContenedor.add(informe);
     }//GEN-LAST:event_btnInforme1ActionPerformed
 
@@ -269,9 +273,9 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         btnInforme3.setEnabled(true);
         btnInforme4.setEnabled(false);
         mainPanel.setVisible(false);
-        informe.inicializar(4);
-        informe.setVisible(true);
-        JContenedor.add(informe);
+        informe.setVisible(false);
+        informeSql.setVisible(true);
+        JContenedor.add(informeSql);
     }//GEN-LAST:event_btnInforme4ActionPerformed
 
     /**

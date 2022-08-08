@@ -33,27 +33,15 @@ public class Consulta {
             ResultSet rs = null;
             sta = db.createStatement();
             rs = sta.executeQuery(query); //ejecuta consulta SQL
-            ArrayList<ArrayList<String>> listota = new ArrayList<>();
-            /*ArrayList<String> li=new ArrayList<>();
-            li.add("ID_LIDER");
-            li.add("NOMBRE");
-            li.add("PRIMER APELLIDO");
-            li.add("CIUDAD RESIDENCIA");
-            listota.add(li);*/
-            //resultado = resultado + (String.format("%3s %-15s %-15s %-15s", "ID", "NOMBRE", "APELLIDO", "CIUDAD")) + "\n";
+            ArrayList<Object[]> listota = new ArrayList<>();
             while (rs.next()) {
-                ArrayList<String> lista = new ArrayList<>();
-                lista.add(String.valueOf(rs.getInt("id_lider")));
-                lista.add(rs.getString("nombre"));
-                lista.add(rs.getString("primer_apellido"));
-                lista.add(rs.getString("ciudad_residencia"));
+                Object[] lista = new Object[4];
+                lista[0] = (String.valueOf(rs.getInt("id_lider")));
+                lista[1] = (rs.getString("nombre"));
+                lista[2] = (rs.getString("primer_apellido"));
+                lista[3] = (rs.getString("ciudad_residencia"));
                 listota.add(lista);
-                //resultado = resultado + (String.format("%3 %-15s %-15s %-15s", lista.get(0), lista.get(0), lista.get(0), lista.get(0))) + "\n";   
             }
-            for (int i = 0; i < listota.size(); i++) {
-                System.out.println(listota.get(i));
-            }
-
             db.close();
             sta.close();
             rs.close();
@@ -71,17 +59,14 @@ public class Consulta {
             ResultSet rs = null;
             sta = db.createStatement();
             rs = sta.executeQuery(query); //ejecuta consulta SQL
-            ArrayList<ArrayList<String>> listota = new ArrayList<>();
+            ArrayList<Object[]> listota = new ArrayList<>();
             while (rs.next()) {
-                ArrayList<String> lista = new ArrayList<>();
-                lista.add(String.valueOf(rs.getInt("ID_Proyecto")));
-                lista.add(rs.getString("Constructora"));
-                lista.add(rs.getString("Numero_Habitaciones"));
-                lista.add(rs.getString("Ciudad"));
+                Object[] lista = new Object[4];
+                lista[0] = (String.valueOf(rs.getInt("ID_Proyecto")));
+                lista[1] = (rs.getString("Constructora"));
+                lista[2] = (rs.getInt("Numero_Habitaciones"));
+                lista[3] = (rs.getString("Ciudad"));
                 listota.add(lista);
-            }
-            for (int i = 0; i < listota.size(); i++) {
-                System.out.println(listota.get(i));
             }
 
             db.close();
@@ -102,18 +87,14 @@ public class Consulta {
             ResultSet rs = null;
             sta = db.createStatement();
             rs = sta.executeQuery(query); //ejecuta consulta SQL
-            ArrayList<ArrayList<String>> listota = new ArrayList<>();
+            ArrayList<Object[]> listota = new ArrayList<>();
 
             while (rs.next()) {
-                ArrayList<String> lista = new ArrayList<>();
-                lista.add(String.valueOf(rs.getInt("ID_COMPRA")));
-                lista.add(rs.getString("Constructora"));
-                lista.add(rs.getString("Banco_Vinculado"));
+                Object[] lista = new Object[3];
+                lista[0] = (String.valueOf(rs.getInt("ID_COMPRA")));
+                lista[1] = (rs.getString("Constructora"));
+                lista[2] = (rs.getString("Banco_Vinculado"));
                 listota.add(lista);
-
-            }
-            for (int i = 0; i < listota.size(); i++) {
-                System.out.println(listota.get(i));
             }
 
             db.close();
