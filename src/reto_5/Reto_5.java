@@ -24,8 +24,8 @@ public class Reto_5 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //ReportView view=new ReportView();
-        //view.setVisible(true);
+        ReportView view=new ReportView();
+        view.setVisible(true);
         ReportController controller=new ReportController();
         Consulta consulta=new Consulta();
         consulta.query1(consulta.getConsulta1());

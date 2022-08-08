@@ -5,21 +5,48 @@
 package reto_5.view;
 
 import java.awt.Image;
+import java.awt.Panel;
+import java.awt.PopupMenu;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import reto_5.view.MainPanel;
 
 /**
  *
  * @author Daniel Murillo
  */
-public class ReportView extends javax.swing.JFrame {
+public class ReportView extends javax.swing.JFrame implements ActionListener {
+    Informe informe = new Informe();
+    MainPanel mainPanel = new MainPanel();
 
     /**
      * Creates new form ReportView
      */
     public ReportView() {
         initComponents();
+
+        this.setLocationRelativeTo(null);
+
+        JContenedor.add(mainPanel);
+        Informe informe = new Informe();
+        mainPanel.setVisible(true);
+        informe.setVisible(false);
+
+        btnInicio.addActionListener(this);
+        btnInforme1.addActionListener(this);
+        btnInforme2.addActionListener(this);
+        btnInforme3.addActionListener(this);
+        btnInforme4.addActionListener(this);
+        deshabilitarBoton();
+    }
+
+    private void deshabilitarBoton() {
+        if (mainPanel.isVisible()) {
+            btnInicio.setEnabled(false);
+        }
     }
 
     /**
@@ -31,21 +58,218 @@ public class ReportView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnInforme4 = new javax.swing.JButton();
+        btnInforme1 = new javax.swing.JButton();
+        btnInforme2 = new javax.swing.JButton();
+        btnInforme3 = new javax.swing.JButton();
+        btnInicio = new javax.swing.JButton();
+        JContenedor = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(0, 73, 89));
+
+        jPanel2.setBackground(new java.awt.Color(0, 109, 133));
+        jPanel2.setForeground(new java.awt.Color(0, 73, 89));
+
+        jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 2, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Reports DM");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(34, 34, 34))
+        );
+
+        btnInforme4.setBackground(new java.awt.Color(0, 73, 89));
+        btnInforme4.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        btnInforme4.setForeground(new java.awt.Color(255, 255, 255));
+        btnInforme4.setText("4. Realizar mi propia consulta");
+        btnInforme4.setBorder(null);
+        btnInforme4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInforme4ActionPerformed(evt);
+            }
+        });
+
+        btnInforme1.setBackground(new java.awt.Color(0, 73, 89));
+        btnInforme1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        btnInforme1.setForeground(new java.awt.Color(255, 255, 255));
+        btnInforme1.setText("1. Informe Lider");
+        btnInforme1.setBorder(null);
+        btnInforme1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnInforme1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInforme1ActionPerformed(evt);
+            }
+        });
+
+        btnInforme2.setBackground(new java.awt.Color(0, 73, 89));
+        btnInforme2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        btnInforme2.setForeground(new java.awt.Color(255, 255, 255));
+        btnInforme2.setText("2. Informe Casa Campestre");
+        btnInforme2.setBorder(null);
+        btnInforme2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInforme2ActionPerformed(evt);
+            }
+        });
+
+        btnInforme3.setBackground(new java.awt.Color(0, 73, 89));
+        btnInforme3.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        btnInforme3.setForeground(new java.awt.Color(255, 255, 255));
+        btnInforme3.setText("3. Informe Homecenter");
+        btnInforme3.setBorder(null);
+        btnInforme3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInforme3ActionPerformed(evt);
+            }
+        });
+
+        btnInicio.setBackground(new java.awt.Color(0, 73, 89));
+        btnInicio.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
+        btnInicio.setForeground(new java.awt.Color(255, 255, 255));
+        btnInicio.setText("Inicio");
+        btnInicio.setBorder(null);
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInicioActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnInforme3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInforme2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInforme1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInforme4, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))
+                .addGap(0, 4, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(btnInforme1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnInforme2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnInforme3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnInforme4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+        );
+
+        JContenedor.setBackground(new java.awt.Color(0, 123, 149));
+        JContenedor.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 773, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 428, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnInforme3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInforme3ActionPerformed
+        // TODO add your handling code here:
+        btnInicio.setEnabled(true);
+        btnInforme1.setEnabled(true);
+        btnInforme2.setEnabled(true);
+        btnInforme3.setEnabled(false);
+        btnInforme4.setEnabled(true);
+        mainPanel.setVisible(false);
+        informe.inicializar(3);
+        informe.setVisible(true);
+        informe.setInforme(3);
+        JContenedor.add(informe);
+    }//GEN-LAST:event_btnInforme3ActionPerformed
+
+    private void btnInforme2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInforme2ActionPerformed
+        // TODO add your handling code here:
+        btnInicio.setEnabled(true);
+        btnInforme1.setEnabled(true);
+        btnInforme2.setEnabled(false);
+        btnInforme3.setEnabled(true);
+        btnInforme4.setEnabled(true);
+        mainPanel.setVisible(false);
+        informe.inicializar(2);
+        informe.setVisible(true);
+        JContenedor.add(informe);
+    }//GEN-LAST:event_btnInforme2ActionPerformed
+
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
+        // TODO add your handling code here:
+        btnInicio.setEnabled(false);
+        btnInforme1.setEnabled(true);
+        btnInforme2.setEnabled(true);
+        btnInforme3.setEnabled(true);
+        btnInforme4.setEnabled(true);
+        mainPanel.setVisible(true);
+        informe.setVisible(false);
+        JContenedor.add(mainPanel);
+        
+    }//GEN-LAST:event_btnInicioActionPerformed
+
+    private void btnInforme1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInforme1ActionPerformed
+        // TODO add your handling code here:
+        btnInicio.setEnabled(true);
+        btnInforme1.setEnabled(false);
+        btnInforme2.setEnabled(true);
+        btnInforme3.setEnabled(true);
+        btnInforme4.setEnabled(true);
+        mainPanel.setVisible(false);
+        informe.inicializar(1);
+        informe.setVisible(true);
+        JContenedor.add(informe);
+    }//GEN-LAST:event_btnInforme1ActionPerformed
+
+    private void btnInforme4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInforme4ActionPerformed
+        // TODO add your handling code here:
+        btnInicio.setEnabled(true);
+        btnInforme1.setEnabled(true);
+        btnInforme2.setEnabled(true);
+        btnInforme3.setEnabled(true);
+        btnInforme4.setEnabled(false);
+        mainPanel.setVisible(false);
+        informe.inicializar(4);
+        informe.setVisible(true);
+        JContenedor.add(informe);
+    }//GEN-LAST:event_btnInforme4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -84,5 +308,20 @@ public class ReportView extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel JContenedor;
+    private javax.swing.JButton btnInforme1;
+    private javax.swing.JButton btnInforme2;
+    private javax.swing.JButton btnInforme3;
+    private javax.swing.JButton btnInforme4;
+    private javax.swing.JButton btnInicio;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
 }
