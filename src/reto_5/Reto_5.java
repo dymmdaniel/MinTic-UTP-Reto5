@@ -32,6 +32,7 @@ public class Reto_5 {
         System.out.println();
         consulta.query2(consulta.getConsulta2());
         System.out.println();
+        
         consulta.query3(consulta.getConsulta3());
     }
     
