@@ -1,5 +1,6 @@
-# MinTic-UTP-Reto5
-Reto 5 de Daniel Yesid Murillo Morales
+# Min TIC UTP  
+## Reto 5
+Daniel Yesid Murillo Morales
 
 Version de Java : 11  
 Ultima actualizacion: 07/08/2022  
