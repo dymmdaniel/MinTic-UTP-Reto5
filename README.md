@@ -3,7 +3,8 @@
 Daniel Yesid Murillo Morales
 
 Version de Java : 11  
-Ultima actualizacion: 07/08/2022  
+Ultima actualizacion: 08/08/2022
+-- Beta interface view terminado
 Propietario: Daniel Yesid Murillo Morales  
 Contacto: danielmurillomorales01@gmail.com  
 Universidad : Universidad Tecnologica de Pereira - Mision Tic 2022  
