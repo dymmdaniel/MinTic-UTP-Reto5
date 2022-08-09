@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import reto_5.consult.Consulta;
+import reto_5.controller.ReportController;
 
 /**
  *
@@ -16,7 +17,6 @@ import reto_5.consult.Consulta;
 public class Informe extends javax.swing.JPanel {
 
     private int informe = 0;
-    Consulta consulta = new Consulta();
 
     /**
      * Creates new form informe
@@ -26,62 +26,20 @@ public class Informe extends javax.swing.JPanel {
         jTable1.enable(false);
     }
 
-    public void inicializar(int x) {
+    public void inicializar(int x,DefaultTableModel consulta) {
         if (x == 1) {
             //Asignamos el nombre
             jLabel1.setText("1. Informe Lider");
-            DefaultTableModel modelTable = new DefaultTableModel();
-            ArrayList<String> cabecera = new ArrayList<>();
-            ArrayList<Object[]> rows = new ArrayList<>();    
-            cabecera.add("ID lider");
-            cabecera.add("Nombre");
-            cabecera.add("Primer Apellido");
-            cabecera.add("Ciudad");
-            for (Object nombre : cabecera) {
-                modelTable.addColumn(nombre);
-            }
-            this.jTable1.setModel(modelTable);
-            rows = consulta.query1(consulta.getConsulta1());
-            for (Object[] data:rows) {
-                modelTable.addRow(data);
-            }
-            this.jTable1.setModel(modelTable);
+            this.jTable1.setModel(consulta);
 
         } else if (x == 2) {
             //Asignamos el nombre
             jLabel1.setText("2. Informe Campestre");
-            DefaultTableModel modelTable = new DefaultTableModel();
-            ArrayList<Object> cabecera = new ArrayList<>();
-            ArrayList<Object[]> rows = new ArrayList<>();
-            cabecera.add("ID Proyecto");
-            cabecera.add("Constructora");
-            cabecera.add("Numero Habitaciones");
-            cabecera.add("Ciudad");
-            for (Object nombre : cabecera) {
-                modelTable.addColumn(nombre);
-            }
-            rows = consulta.query2(consulta.getConsulta2());
-            for (Object[] data:rows) {
-                modelTable.addRow(data);
-            }
-            this.jTable1.setModel(modelTable);
+            this.jTable1.setModel(consulta);
         } else if (x == 3) {
             //Asignamos el nombre
-            jLabel1.setText("3. Informe Homecenter");
-            DefaultTableModel modelTable = new DefaultTableModel();
-            ArrayList<Object> cabecera = new ArrayList<>();
-            ArrayList<Object[]> rows = new ArrayList<>();
-            cabecera.add("ID COMPRA");
-            cabecera.add("Constructora");
-            cabecera.add("Banco Vinculado");
-            for (Object nombre : cabecera) {
-                modelTable.addColumn(nombre);
-            }
-            rows = consulta.query3(consulta.getConsulta3());
-            for (Object[] data:rows) {
-                modelTable.addRow(data);
-            }
-            this.jTable1.setModel(modelTable);
+            jLabel1.setText("3. Informe Homecenter"); 
+            this.jTable1.setModel(consulta);
         } else {
             jLabel1.setText("Escriba el comando SQL para realizar la consulta");
             DefaultTableModel modelTable = new DefaultTableModel();
