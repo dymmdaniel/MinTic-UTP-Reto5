@@ -88,7 +88,7 @@ public class MainPanel extends javax.swing.JPanel {
 
         txtCharge.setText("Cargando consultas...");
 
-        jLabel7.setText("Daniel Yesid Murillo Morales Grupo 52");
+        jLabel7.setText("Daniel Yesid Murillo Morales - Grupo 52");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

@@ -171,7 +171,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel7">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Daniel Yesid Murillo Morales Grupo 52"/>
+        <Property name="text" type="java.lang.String" value="Daniel Yesid Murillo Morales - Grupo 52"/>
       </Properties>
     </Component>
   </SubComponents>
