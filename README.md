@@ -15,7 +15,7 @@ Ultima actualizacion: 10/08/2022
 - Detalles de interfaz
 - Borrado de extras
 - Detalles en la interfaz (se coloca un jtext que desaparece)
-- Presentacion agradable de la los querys en cada una de las tres consultas.
+- Presentacion agradable de los querys en cada una de las tres consultas.
 ***
 Buen dia en este repositorio puede encontrar todo el codigo empleado para realizar la aplicacion para visualizar los reportes.
 
