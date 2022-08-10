@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import reto_5.consult.Consulta;
 import reto_5.controller.ReportController;
+import reto_5.util.JDBCUtilities;
 import reto_5.view.ReportView;
 
 /**
@@ -22,10 +23,12 @@ public class Reto_5 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         // TODO code application logic here
         ReportView view=new ReportView();
         view.setVisible(true);
+        JDBCUtilities jdbc=new JDBCUtilities();
+        jdbc.getConnection();
     }
     
 }

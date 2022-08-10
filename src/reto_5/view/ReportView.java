@@ -9,6 +9,7 @@ import java.awt.Panel;
 import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import static java.lang.Thread.sleep;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
@@ -27,7 +28,7 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
     Informe informe = new Informe();
     InformeSQL informeSql = new InformeSQL();
     MainPanel mainPanel = new MainPanel();
-    ReportController controller=new ReportController();
+    ReportController controller = new ReportController();
 
     /**
      * Creates new form ReportView
@@ -45,13 +46,33 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         btnInforme1.addActionListener(this);
         btnInforme2.addActionListener(this);
         btnInforme3.addActionListener(this);
-        btnInforme4.addActionListener(this);
+
         deshabilitarBoton();
     }
 
     private void deshabilitarBoton() {
         if (mainPanel.isVisible()) {
             btnInicio.setEnabled(false);
+            mainPanel.progressBar();
+            Thread hilo = new Thread() {
+                @Override
+                public void run() {
+                    btnInforme1.setEnabled(false);
+                    btnInforme2.setEnabled(false);
+                    btnInforme3.setEnabled(false);
+                    for (int i = 1; i <= 100; i++) {
+                        try {
+                            sleep(15);
+                        } catch (InterruptedException ex) {
+                            Logger.getLogger(MainPanel.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                    btnInforme1.setEnabled(true);
+                    btnInforme2.setEnabled(true);
+                    btnInforme3.setEnabled(true);
+                }
+            };
+            hilo.start();
         }
     }
 
@@ -65,7 +86,6 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnInforme4 = new javax.swing.JButton();
         btnInforme1 = new javax.swing.JButton();
         btnInforme2 = new javax.swing.JButton();
         btnInforme3 = new javax.swing.JButton();
@@ -75,17 +95,6 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 73, 89));
-
-        btnInforme4.setBackground(new java.awt.Color(0, 73, 89));
-        btnInforme4.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
-        btnInforme4.setForeground(new java.awt.Color(255, 255, 255));
-        btnInforme4.setText("4. Realizar mi propia consulta");
-        btnInforme4.setBorder(null);
-        btnInforme4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInforme4ActionPerformed(evt);
-            }
-        });
 
         btnInforme1.setBackground(new java.awt.Color(0, 73, 89));
         btnInforme1.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 18)); // NOI18N
@@ -138,17 +147,12 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnInforme2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnInforme1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnInforme4, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                    .addComponent(btnInforme3, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                    .addComponent(btnInforme1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInforme2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnInforme3, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,13 +161,11 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
                 .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(43, 43, 43)
                 .addComponent(btnInforme1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addComponent(btnInforme2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addGap(67, 67, 67)
                 .addComponent(btnInforme3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addComponent(btnInforme4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(51, 51, 51))
         );
 
         JContenedor.setBackground(new java.awt.Color(0, 123, 149));
@@ -189,18 +191,18 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
 
     private void btnInforme3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInforme3ActionPerformed
         // TODO add your handling code here:
-
         btnInicio.setEnabled(true);
         btnInforme1.setEnabled(true);
         btnInforme2.setEnabled(true);
         btnInforme3.setEnabled(false);
-        btnInforme4.setEnabled(true);
         mainPanel.setVisible(false);
-        informe.inicializar(3,controller.consulta3());
+        informe.inicializar(3, controller.consulta3());
         informe.setVisible(true);
         informeSql.setVisible(false);
         informe.setInforme(3);
         JContenedor.add(informe);
+        mainPanel.setVisible(false);
+        mainPanel.getjProgressBar().setVisible(false);
     }//GEN-LAST:event_btnInforme3ActionPerformed
 
     private void btnInforme2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInforme2ActionPerformed
@@ -209,12 +211,13 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         btnInforme1.setEnabled(true);
         btnInforme2.setEnabled(false);
         btnInforme3.setEnabled(true);
-        btnInforme4.setEnabled(true);
         mainPanel.setVisible(false);
-        informe.inicializar(2,controller.consulta2());
+        informe.inicializar(2, controller.consulta2());
         informeSql.setVisible(false);
         informe.setVisible(true);
         JContenedor.add(informe);
+        mainPanel.setVisible(false);
+        mainPanel.getjProgressBar().setVisible(false);
     }//GEN-LAST:event_btnInforme2ActionPerformed
 
     private void btnInforme1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInforme1ActionPerformed
@@ -223,26 +226,14 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         btnInforme1.setEnabled(false);
         btnInforme2.setEnabled(true);
         btnInforme3.setEnabled(true);
-        btnInforme4.setEnabled(true);
         mainPanel.setVisible(false);
-        informe.inicializar(1,controller.consulta1());
+        informe.inicializar(1, controller.consulta1());
         informe.setVisible(true);
         informeSql.setVisible(false);
         JContenedor.add(informe);
-    }//GEN-LAST:event_btnInforme1ActionPerformed
-
-    private void btnInforme4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInforme4ActionPerformed
-        // TODO add your handling code here:
-        btnInicio.setEnabled(true);
-        btnInforme1.setEnabled(true);
-        btnInforme2.setEnabled(true);
-        btnInforme3.setEnabled(true);
-        btnInforme4.setEnabled(false);
         mainPanel.setVisible(false);
-        informe.setVisible(false);
-        informeSql.setVisible(true);
-        JContenedor.add(informeSql);
-    }//GEN-LAST:event_btnInforme4ActionPerformed
+        mainPanel.getjProgressBar().setVisible(false);
+    }//GEN-LAST:event_btnInforme1ActionPerformed
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         // TODO add your handling code here:
@@ -250,7 +241,6 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         btnInforme1.setEnabled(true);
         btnInforme2.setEnabled(true);
         btnInforme3.setEnabled(true);
-        btnInforme4.setEnabled(true);
         mainPanel.setVisible(true);
         informe.setVisible(false);
         informeSql.setVisible(false);
@@ -298,7 +288,6 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
     private javax.swing.JButton btnInforme1;
     private javax.swing.JButton btnInforme2;
     private javax.swing.JButton btnInforme3;
-    private javax.swing.JButton btnInforme4;
     private javax.swing.JButton btnInicio;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
