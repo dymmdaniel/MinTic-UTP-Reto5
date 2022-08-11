@@ -12,7 +12,6 @@ import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 import reto_5.consult.Consulta;
 import reto_5.view.Informe;
-import reto_5.view.InformeSQL;
 import reto_5.view.MainPanel;
 
 /**
@@ -23,7 +22,6 @@ public class ReportController {
 
     //Front end
     Informe informe = new Informe(); // Creamos un objeto tipo informe
-    InformeSQL informeSql = new InformeSQL(); // Creamos un objeto tipo informeSQL
     MainPanel mainPanel = new MainPanel(); // Creamos un objeto tipo MainPanel
     
     //Backend
@@ -33,9 +31,8 @@ public class ReportController {
         //Constructor vacio
     }
     
-    public ReportController(Informe informe,InformeSQL informeSql,MainPanel mainPanel){
+    public ReportController(Informe informe,MainPanel mainPanel){
         this.informe=informe;
-        this.informeSql=informeSql;
         this.mainPanel=mainPanel;
     }
     

@@ -26,7 +26,6 @@ import reto_5.view.MainPanel;
 public class ReportView extends javax.swing.JFrame implements ActionListener {
 
     Informe informe = new Informe();
-    InformeSQL informeSql = new InformeSQL();
     MainPanel mainPanel = new MainPanel();
     ReportController controller = new ReportController();
 
@@ -198,7 +197,6 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         mainPanel.setVisible(false);
         informe.inicializar(3, controller.consulta3());
         informe.setVisible(true);
-        informeSql.setVisible(false);
         informe.setInforme(3);
         JContenedor.add(informe);
         mainPanel.setVisible(false);
@@ -213,7 +211,6 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         btnInforme3.setEnabled(true);
         mainPanel.setVisible(false);
         informe.inicializar(2, controller.consulta2());
-        informeSql.setVisible(false);
         informe.setVisible(true);
         JContenedor.add(informe);
         mainPanel.setVisible(false);
@@ -229,7 +226,6 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         mainPanel.setVisible(false);
         informe.inicializar(1, controller.consulta1());
         informe.setVisible(true);
-        informeSql.setVisible(false);
         JContenedor.add(informe);
         mainPanel.setVisible(false);
         mainPanel.getjProgressBar().setVisible(false);
@@ -243,7 +239,6 @@ public class ReportView extends javax.swing.JFrame implements ActionListener {
         btnInforme3.setEnabled(true);
         mainPanel.setVisible(true);
         informe.setVisible(false);
-        informeSql.setVisible(false);
         JContenedor.add(mainPanel);
     }//GEN-LAST:event_btnInicioActionPerformed
 
