@@ -7,7 +7,7 @@ Version de Java : 11
 Propietario: Daniel Yesid Murillo Morales  
 Contacto: danielmurillomorales01@gmail.com  
 Universidad : Universidad Tecnologica de Pereira - Mision Tic 2022  
-Profesor: Luis Guillermo
+Profesor: Luis Molero
 
 Ultima actualizacion: 10/08/2022
 - Animacion barra de carga terminado, deshabilitacion de botones
